@@ -22,7 +22,7 @@ sudo update-ca-certificates
 
 To avoid bad certificate error, add proxy domain resolution on DNS or on the client device even if the proxy settings are configured with proxy IP and not proxy domain.
 sudo nano /etc/hosts 
-<proxy IP address>	<domain entered while creating the certificate>
+proxy_IP_address	domain_entered_while_creating_the_certificate
 
 If testing proxy by using wget, make sure to do the following step as wget does not use system proxy settings
-Modify https proxy in /etc/wgetrc to https://<proxy IP address>:<proxy port>
+Modify https proxy in /etc/wgetrc to https://proxy_IP_address:proxy_port

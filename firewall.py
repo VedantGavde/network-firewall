@@ -1,5 +1,3 @@
-from netfilterqueue import NetfilterQueue
-from scapy.all import *
 import socket
 import ipaddress
 
@@ -252,7 +250,7 @@ def block_dst_packets(dst, prt):
     file = open("dst_ports.txt","r")
     ports = file.readlines()
     ports = [i.strip() for i in ports]
-    if dst in dst_ips: #Check if the destincation IP is in the list of allowed destination IPS
+    if dst not in dst_ips: #Check if the destincation IP is in the list of allowed destination IPS
         if (prt not in ports):#Check if the port is not in the list of blocked source IPS
             print("Letting it through")
             return 1
